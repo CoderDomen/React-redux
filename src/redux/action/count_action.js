@@ -1,4 +1,4 @@
-import { ADD, DEL } from "./constant";
+import { ADD, DEL } from "../constant";
 
 // 同步action，是一个普通对象
 export const addAction = data => ({ type: ADD, data });

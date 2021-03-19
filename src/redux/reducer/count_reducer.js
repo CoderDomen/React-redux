@@ -2,7 +2,7 @@
   创建一个reducer对象 ，本质是一个函数， 有两个参数（之前的状态 &  动作对象）
 */
 
-import { ADD, DEL } from "./constant";
+import { ADD, DEL } from "../constant";
 
 let initState = 0;
 function countReducer(preState = initState, action) {

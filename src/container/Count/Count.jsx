@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import { connect } from "react-redux";
 
-import { addAction, delAction, addAsyncAction } from "../../redux/count_action";
+import { addAction, delAction, addAsyncAction } from "../../redux/action/count_action";
 
 
 
@@ -37,6 +37,8 @@ class Count extends Component {
     console.log(this.props); //获取来自容器组件传递过来的mapStateToProps 、  mapDispatchToProps
     return (
       <div>
+        <h4>我是Count组件，当前人数为{this.props.listNum}</h4>
+
         <h4>当前求和为：{this.props.count}</h4>
         <select ref={c => (this.val = c)}>
           <option value="1">1</option>
@@ -75,7 +77,7 @@ class Count extends Component {
 // }
 
 //当前作为一个容器组件，用于连接  UI组件  与 store \mapDispatchToProps  可以为一个对象，当属性值为action对象时，react-redux会自动调用dispatch
-export default connect(state => ({ count: state }), {
+export default connect(state => ({ count: state.count,listNum:state.list.length }), {
   add: addAction,
   del: delAction,
   addAsync: addAsyncAction
