@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Count from "./container/count/Count.js"; //导入容器组件与store传递数据
+import Count from "./container/Count/Count.jsx"; //导入容器组件与store传递数据
 
 class App extends Component {
   render() {
